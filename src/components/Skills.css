@@ -1,0 +1,87 @@
+
+.skillshead{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+}
+
+.title{
+    text-align: center;
+    margin-left: 15px;
+    color: green;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+.skiilsForFrontEnd{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    gap: 5%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+.skiilsForBackEnd{
+    margin-bottom: 100px;
+}
+.skillimag{
+    width: 130px;
+    cursor: pointer;
+    opacity: 1;
+}
+.skillName{
+    background-color: greenyellow;
+    font-weight: 800;
+    padding: 5px;
+}
+
+.title2{
+    margin-top: 100px;
+    text-align: center;
+    margin-left: 15px;
+    color: green;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+@media (max-width:990px) {
+    .skiilsForFrontEnd{
+        grid-template-columns: repeat(3,30%);
+    }
+    .skiilsForBackEnd{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:760px) {
+    .skiilsForFrontEnd{
+        grid-template-columns: repeat(2,45%);
+    }
+    .skiilsForBackEnd{
+        margin-top: 170px;
+    }
+}
+
+@media (max-width:570px) {
+    .skiilsForFrontEnd{
+        grid-template-columns: repeat(1,90%);
+    }
+    .title2{
+        margin-top: 650px;
+    }
+    .fullDetail{
+    /* border: 1px solid black; */
+    width: 60%;
+    margin: auto;
+    }
+    .skiilsForBackEnd{
+        margin-top: 570px;
+    }
+}

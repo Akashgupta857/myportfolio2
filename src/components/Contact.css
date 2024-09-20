@@ -1,0 +1,107 @@
+
+.baground{
+    position: absolute;
+    height: 100vh;
+    /* top: 0; */
+    z-index: -1000;
+    width: 100% !important;
+    background-image: url("https://www.idea-worldwide.com/images/background-contact-us.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto 100vh;
+}
+
+.container{
+    text-align: right;
+    width: 50%;
+    margin-left: 40%;
+    /* border: 1px solid black; */
+}
+
+.letsWork{
+    color: green;
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-bottom: 0%;
+}
+.coma{
+    font-size: 70px;
+    height: 45px;
+    color: green;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+.h5Description{
+    color: rgb(106, 141, 53);
+    font-size: 1.25rem;
+    margin-top: 1%;
+    margin-bottom: 0%;
+    /* border:1px solid black; */
+}
+
+.contactDetails{
+    margin-top: 0%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* border:1px solid black; */
+}
+
+.icons2{
+    /* margin-top: 1.5rem; */
+    display: flex;
+}
+
+.icon2{
+    width: 30px;
+    margin: 10px;
+}
+
+.phoneAndEmail{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    /* justify-content: end; */
+}
+
+.phoneEmail{
+    color: green;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0%;
+}
+
+.iconWithText{
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+@media (max-width:1100px) {
+    .container{
+        width: 60%;
+        margin: auto;
+    }
+    .baground{
+         background-image: url("https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg");
+    }
+}
+
+@media (max-width:800px) {
+    .container{
+        width: 80%;
+        margin: auto;
+    }
+    .baground{
+         background-image: url("https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg");
+    }
+    .coma{
+        margin-bottom: 10px;
+    }
+    .iconWithText > p{
+        font-size: 1rem;
+    }
+}

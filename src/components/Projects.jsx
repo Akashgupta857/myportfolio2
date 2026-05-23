@@ -97,6 +97,50 @@ function Projects() {
       <div className="headChild">
         <div className="projectImage">
           <img
+            src="./icons/datadasher.png"
+            className="ProjectLogoImage"
+            alt="E COMMERCE"
+          />
+        </div>
+        <div className="projectContent">
+          <h3 className="projectTitle">Data Dashers_022</h3>
+          <br />
+          <span className="projectDetail">
+            Collaborated with a team of 5 to develop a whiteboard application,
+            enhancing real-time collaboration through drawing tools and sticky
+            notes. Utilized Firebase for real-time data storage and user
+            authentication, ensuring secure and efficient data management.
+            Implemented responsive front-end components using HTML, CSS, and
+            JavaScript to ensure cross-device compatibility.
+          </span>
+          <br />
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://thinkspacewhiteboard.netlify.app/signup"
+          >
+            <button className="projectButton">See This Live</button>
+          </a>
+          {/* <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/amanbind36/Data_Dasher"
+          >
+            <button className="projectButton">Source Code</button>
+          </a> */}
+          <br />
+          <div className="technologiesDiv">
+            <span className="Technologies">React</span>
+            <span className="Technologies">Reduxtoolkit</span>
+            <span className="Technologies">CSS</span>
+            <span className="Technologies">Express</span>
+            <span className="Technologies">MongoDB</span>
+          </div>
+        </div>
+      </div>
+      <div className="headChild">
+        <div className="projectImage">
+          <img
             src="./icons/libertycoders.png"
             className="ProjectLogoImage"
             alt="textgenerator"
@@ -120,13 +164,13 @@ function Projects() {
           >
             <button className="projectButton">See This Live</button>
           </a>
-          <a
+          {/* <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/Akashgupta857/Liberty-Coders_001"
           >
             <button className="projectButton">Source Code</button>
-          </a>
+          </a> */}
           <br />
           <div className="technologiesDiv">
             <span className="Technologies">HTML</span>

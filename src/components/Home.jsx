@@ -1,8 +1,7 @@
 import "./Home.css";
-import { useParams } from "react-router-dom";
+import ResumeLink from "./ResumeLink";
 
 function Home() {
-  // console.log(useParams());
   return (
     <div className="homeDetail">
       <div className="detail">
@@ -43,9 +42,11 @@ function Home() {
             </a>
           </div>
           <br />
-          <a href="./icons/akashguptaresume.pdf" target="_blank">
-            <button className="resume">Resume</button>
-          </a>
+          <ResumeLink>
+            <button type="button" className="resume">
+              Resume
+            </button>
+          </ResumeLink>
         </div>
       </div>
       <div className="image">

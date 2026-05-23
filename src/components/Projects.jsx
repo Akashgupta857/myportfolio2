@@ -6,34 +6,41 @@ function Projects() {
       <div className="headChild">
         <div className="projectImage">
           <img
-            src="./icons/promanage.png"
+            src="./icons/globalCalendar.png"
             className="ProjectLogoImage"
             alt="netflixclone"
           />
         </div>
         <div className="projectContent">
-          <h3 className="projectTitle">ProManagement</h3>
+          <h3 className="projectTitle">Global Calendar</h3>
           <br />
           <span className="projectDetail">
-          Developed a full-featured task management application using MERN stack (MongoDB, Express.js, React.js, Node.js).
-          Implemented user authentication, task prioritization, and checklist functionalities to enhance task organization and tracking.
-            Enabled seamless drag-and-drop movement of tasks across stages with dynamic state updates.
+            Global Calendar is an enterprise scheduling platform similar to
+            Microsoft Calendar, allowing users to create and manage webinars and
+            regular meetings with customizable roles such as attendees,
+            presenters, and co-organizers. The system supports adding multiple
+            participants, configuring meeting settings, and automating event
+            creation. Built using Next.js for the frontend, Module Federation
+            for integrating multiple micro-frontend repositories, and NestJS for
+            secure and scalable backend APIs, the platform delivers seamless
+            scheduling, smooth UI flow, and efficient communication across
+            modules.
           </span>
           <br />
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://promanage-frontend-beta.vercel.app/"
+            href="https://prod-global-calendar.regenesys.digital/global-calendar"
           >
             <button className="projectButton">See This Live</button>
           </a>
-          <a
+          {/* <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/akdon1198/promanage_frontend"
           >
             <button className="projectButton">Source Code</button>
-          </a>
+          </a> */}
           <br />
           <div className="technologiesDiv">
             <span className="Technologies">React</span>
@@ -46,18 +53,21 @@ function Projects() {
       <div className="headChild">
         <div className="projectImage">
           <img
-            src="./icons/datadasher.png"
+            src="./icons/rms.png"
             className="ProjectLogoImage"
             alt="E COMMERCE"
           />
         </div>
         <div className="projectContent">
-          <h3 className="projectTitle">Data Dashers_022</h3>
+          <h3 className="projectTitle">Rms Student Portal</h3>
           <br />
           <span className="projectDetail">
-          Collaborated with a team of 5 to develop a whiteboard application, enhancing real-time collaboration through drawing tools and sticky notes.
-          Utilized Firebase for real-time data storage and user authentication, ensuring secure and efficient data management.
-          Implemented responsive front-end components using HTML, CSS, and JavaScript to ensure cross-device compatibility.
+            Developed and contributed extensively to the RMS Student System
+            frontend using React.js, handling authentication flows, UI
+            development, responsive design, API integrations, performance
+            optimization, and overall user experience improvements. Worked on
+            building scalable and user-friendly interfaces for students while
+            maintaining clean and efficient frontend architecture.
           </span>
           <br />
           <a
@@ -67,13 +77,13 @@ function Projects() {
           >
             <button className="projectButton">See This Live</button>
           </a>
-          <a
+          {/* <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/amanbind36/Data_Dasher"
           >
             <button className="projectButton">Source Code</button>
-          </a>
+          </a> */}
           <br />
           <div className="technologiesDiv">
             <span className="Technologies">React</span>
@@ -96,9 +106,11 @@ function Projects() {
           <h3 className="projectTitle">Liberty coders</h3>
           <br />
           <span className="projectDetail">
-          Collaborated with a team to create a template-based web application for easier code integration.
-          Implemented responsive and user-friendly interfaces using HTML5, CSS3, and JavaScript.
-          Developed documentation and blog features to guide users in utilizing the application effectively.
+            Collaborated with a team to create a template-based web application
+            for easier code integration. Implemented responsive and
+            user-friendly interfaces using HTML5, CSS3, and JavaScript.
+            Developed documentation and blog features to guide users in
+            utilizing the application effectively.
           </span>
           <br />
           <a

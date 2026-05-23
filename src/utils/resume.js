@@ -1,11 +1,21 @@
-import { RESUME_FILENAME, RESUME_URL } from "../constants/resume";
+import { resume, resumeFileName } from "./config";
+
+function getDriveDownloadUrl(viewUrl) {
+  const match = viewUrl.match(/\/d\/([^/]+)/);
+  if (!match) return viewUrl;
+  return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+}
 
 export function openAndDownloadResume() {
-  window.open(RESUME_URL, "_blank", "noopener,noreferrer");
+  const downloadUrl = getDriveDownloadUrl(resume);
+
+  window.open(resume, "_blank", "noopener,noreferrer");
 
   const link = document.createElement("a");
-  link.href = RESUME_URL;
-  link.download = RESUME_FILENAME;
+  link.href = downloadUrl;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.download = resumeFileName;
   link.style.display = "none";
   document.body.appendChild(link);
   link.click();

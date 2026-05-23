@@ -1,22 +1,32 @@
-import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route path="/skills" element={<Skills/>}/>
-        <Route path="/projects" element={<Projects/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-      </Routes>
+      <main className="portfolioSections">
+        <section id="home" className="portfolioSection">
+          <Home />
+        </section>
+        <section id="about" className="portfolioSection">
+          <About />
+        </section>
+        <section id="skills" className="portfolioSection">
+          <Skills />
+        </section>
+        <section id="projects" className="portfolioSection">
+          <Projects />
+        </section>
+        <section id="contact" className="portfolioSection">
+          <Contact />
+        </section>
+      </main>
     </div>
   );
 }

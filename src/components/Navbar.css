@@ -1,22 +1,27 @@
 .mainNav {
-    width: 98%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1%;
+    padding: 1rem 0;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .nav {
-    width: 30vw;
+    width: min(95vw, 1100px);
     display: flex;
-    justify-content: space-between; /* Space out the hamburger and menu */
+    justify-content: center;
     align-items: center;
     z-index: 10;
-    position: relative; /* Allow absolute positioning for the hamburger */
+    position: relative;
 }
 
 .hamburger {
-    display: none; /* Hidden by default, shown in media queries */
+    display: none;
     font-size: 30px;
     cursor: pointer;
     padding: 10px;
@@ -24,11 +29,13 @@
 
 .logo {
     padding: 5px;
-    margin: 10px;
-    font-size: 20px;
+    margin: 6px 4px;
+    font-size: 18px;
+    white-space: nowrap;
 }
 
-.link {
+.link,
+.resumeNavLink {
     text-decoration: none;
     color: green;
     border: 1px solid white;
@@ -42,50 +49,49 @@
     border-radius: 10px;
 }
 
-/* Menu styles */
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-/* For smaller screens, we hide the menu by default */
 @media (max-width: 768px) {
-    .mainNav{
-        position: fixed;
-        top:0;
-    }
     .nav {
-        width: 100%; /* Full width */
-        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     .menu {
-        display: none; /* Hidden by default */
-        flex-direction: column; /* Stack links vertically */
+        display: none;
+        flex-direction: column;
         width: 100%;
         background-color: white;
         position: absolute;
-        top: 60px; /* Adjust based on your design */
+        top: 60px;
         left: 0;
         z-index: 9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .menu.open {
-        display: flex; /* Show the menu when open */
+        display: flex;
     }
 
     .logo {
-        margin: 0; /* Remove extra margin in mobile view */
-        padding: 20px; /* Increase padding for larger clickable area */
-        width: 100vw; /* Full width in mobile view */
+        margin: 0;
+        padding: 20px;
+        width: 100%;
         text-align: center;
-        border-bottom: 1px solid #ddd; /* Add separator between links */
+        border-bottom: 1px solid #ddd;
     }
 
-    /* Display the hamburger on small screens */
     .hamburger {
         display: block;
         align-self: flex-end;
+        width: 100%;
+        text-align: right;
+        padding-right: 1rem;
     }
 }

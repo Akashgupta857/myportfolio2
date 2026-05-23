@@ -14,19 +14,22 @@ function Projects() {
         <div className="projectContent">
           <h3 className="projectTitle">ProManagement</h3>
           <br />
-          <spa  n className="projectDetail">
+          <span className="projectDetail">
           Developed a full-featured task management application using MERN stack (MongoDB, Express.js, React.js, Node.js).
           Implemented user authentication, task prioritization, and checklist functionalities to enhance task organization and tracking.
-          Enabled seamless drag-and-drop movement of tasks across stages with dynamic state updates.          </spa>
+            Enabled seamless drag-and-drop movement of tasks across stages with dynamic state updates.
+          </span>
           <br />
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://promanage-frontend-beta.vercel.app/"
           >
             <button className="projectButton">See This Live</button>
           </a>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/akdon1198/promanage_frontend"
           >
             <button className="projectButton">Source Code</button>
@@ -59,11 +62,16 @@ function Projects() {
           <br />
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://thinkspacewhiteboard.netlify.app/signup"
           >
             <button className="projectButton">See This Live</button>
           </a>
-          <a target="_blank" href="https://github.com/amanbind36/Data_Dasher">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/amanbind36/Data_Dasher"
+          >
             <button className="projectButton">Source Code</button>
           </a>
           <br />
@@ -93,10 +101,18 @@ function Projects() {
           Developed documentation and blog features to guide users in utilizing the application effectively.
           </span>
           <br />
-          <a target="_blank" href="https://liberty-coders-001.vercel.app/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://liberty-coders-001.vercel.app/"
+          >
             <button className="projectButton">See This Live</button>
           </a>
-          <a target="_blank" href="https://github.com/Akashgupta857/Liberty-Coders_001">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/Akashgupta857/Liberty-Coders_001"
+          >
             <button className="projectButton">Source Code</button>
           </a>
           <br />

@@ -1,69 +1,68 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { Contect } from "../Context/Context";
+import { Contect } from "../context/Context";
+import ResumeLink from "./ResumeLink";
+import { scrollToSection } from "../utils/scrollToSection";
+
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 function Navbar() {
   const { value, handleClick } = useContext(Contect);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle the menu open/closed
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const onSectionNav = (e, id) => {
+    e.preventDefault();
+    scrollToSection(id);
+    handleClick(id);
+    setIsMenuOpen(false);
   };
 
   return (
-    <div className="mainNav">
+    <header className="mainNav">
       <div className="nav">
-        {/* Hamburger Button for mobile screens */}
-        <div className="hamburger" onClick={toggleMenu}>
-          &#9776; {/* Unicode for hamburger icon */}
+        <div
+          className="hamburger"
+          onClick={toggleMenu}
+          role="button"
+          tabIndex={0}
+          aria-label="Toggle menu"
+        >
+          &#9776;
         </div>
 
-        {/* Menu Links - hide on smaller screens when hamburger is not clicked */}
-        <div className={`menu ${isMenuOpen ? "open" : ""}`}>
-          <Link
+        <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
+          {NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => onSectionNav(e, id)}
+              className={value === id ? "linkHover" : "link"}
+            >
+              <div className="logo">{label}</div>
+            </a>
+          ))}
+          <ResumeLink
+            className={value === "resume" ? "linkHover" : "link"}
             onClick={() => {
-              handleClick("home");
-              setIsMenuOpen(false); // Close menu on link click
+              handleClick("resume");
+              setIsMenuOpen(false);
             }}
-            className={value === "home" ? "linkHover" : "link"}
-            to="/"
           >
-            <div className="logo">Home</div>
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("skills");
-              setIsMenuOpen(false); // Close menu on link click
-            }}
-            className={value === "skills" ? "linkHover" : "link"}
-            to="/skills"
-          >
-            <div className="logo">Skills</div>
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("projects");
-              setIsMenuOpen(false); // Close menu on link click
-            }}
-            className={value === "projects" ? "linkHover" : "link"}
-            to="/projects"
-          >
-            <div className="logo">Projects</div>
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("contact");
-              setIsMenuOpen(false); // Close menu on link click
-            }}
-            className={value === "contact" ? "linkHover" : "link"}
-            to="/contact"
-          >
-            <div className="logo">Contact</div>
-          </Link>
-        </div>
+            <div className="logo">Resume</div>
+          </ResumeLink>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
 

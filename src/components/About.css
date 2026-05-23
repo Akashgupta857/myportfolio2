@@ -1,0 +1,54 @@
+.aboutSection {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.aboutTitle {
+  color: green;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.aboutIntro {
+  color: #212529;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.aboutBlock {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.aboutSubtitle {
+  color: green;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.aboutText,
+.aboutList {
+  color: #212529;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.aboutList {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.aboutList li {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    width: 92%;
+  }
+}

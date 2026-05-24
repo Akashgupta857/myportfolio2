@@ -23,7 +23,7 @@ function Home() {
         </div>
         <div className="box">
           <div className="icons">
-            <a href="https://github.com/akdon1198" target="_blank">
+            <a href="https://github.com/akashgupta857" target="_blank">
               <img
                 className="icon"
                 src="https://icones.pro/wp-content/uploads/2021/06/icone-github-verte.png"

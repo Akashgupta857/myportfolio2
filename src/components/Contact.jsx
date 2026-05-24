@@ -20,7 +20,7 @@ function Contact() {
         <br />
         <div className="contactDetails">
           <div className="icons2">
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/akdon1198">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/akashgupta857">
               <img
                 className="icon2"
                 src="https://icones.pro/wp-content/uploads/2021/06/icone-github-verte.png"

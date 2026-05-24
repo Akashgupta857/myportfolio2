@@ -1,43 +1,62 @@
+/* ── Skills Section (Light Theme) ─────────────────────────────────── */
 .skillshead {
-    width: 80%;
+    width: 85%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem 4rem;
+    padding: 4rem 1rem;
 }
 
 .skillsSectionTitle {
     text-align: center;
-    color: green;
-    font-weight: 900;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
     line-height: 1.2;
+    color: var(--text-primary);
 }
 
 .softSkillsTitle {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 .skillsTagsGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: 1rem;
 }
 
 .skillTag {
-    background-color: greenyellow;
-    color: #212529;
-    font-weight: 700;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 1rem;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
     line-height: 1.2;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    cursor: default;
 }
 
+.skillTag:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
     .skillshead {
         width: 92%;
+    }
+
+    .skillTag {
+        padding: 10px 18px;
+        font-size: 0.85rem;
     }
 }

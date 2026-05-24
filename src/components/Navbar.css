@@ -1,3 +1,4 @@
+/* ── Navbar — Light Glass ─────────────────────────────────────────── */
 .mainNav {
     position: sticky;
     top: 0;
@@ -6,9 +7,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.75rem 0;
-    background-color: #ffffff;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
 }
 
 .nav {
@@ -26,34 +30,22 @@
     line-height: 1;
     cursor: pointer;
     padding: 8px 12px;
-    color: green;
+    color: var(--accent);
     user-select: none;
+    transition: color 0.2s ease;
+}
+
+.hamburger:hover {
+    color: var(--accent-light);
 }
 
 .logo {
-    padding: 5px 10px;
-    margin: 4px;
-    font-size: 18px;
+    padding: 8px 16px;
+    margin: 2px;
+    font-size: 15px;
+    font-weight: 500;
     white-space: nowrap;
-}
-
-.menu a {
-    text-decoration: none;
-    color: green;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu a.link {
-    border: 1px solid transparent;
-}
-
-.menu a.linkHover {
-    color: green;
-    border: 1px solid green;
-    font-weight: 700;
-    border-radius: 10px;
+    letter-spacing: 0.01em;
 }
 
 .menu {
@@ -61,9 +53,52 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 2px;
 }
 
+.menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8px;
+    transition: color 0.25s ease, background 0.25s ease;
+}
+
+.menu a:hover {
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* Inactive link — clean, no border */
+.menu a.link {
+    border: 1px solid transparent;
+}
+
+/* Active link — vivid emerald indicator */
+.menu a.linkHover {
+    color: var(--accent);
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    position: relative;
+}
+
+.menu a.linkHover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px; /* Slightly thicker for light theme */
+    background: var(--accent);
+    border-radius: 3px 3px 0 0;
+}
+
+/* ── Mobile ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
     .mainNav {
         padding: 0;
@@ -81,7 +116,7 @@
         align-items: center;
         align-self: stretch;
         padding: 14px 20px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--border-subtle);
     }
 
     .menu {
@@ -89,13 +124,15 @@
         flex-direction: column;
         align-items: stretch;
         width: 100%;
-        background-color: #ffffff;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         z-index: 9;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-lg);
         gap: 0;
         padding: 0;
     }
@@ -109,8 +146,12 @@
         width: 100%;
         box-sizing: border-box;
         border: none;
-        border-bottom: 1px solid #e8e8e8;
+        border-bottom: 1px solid var(--border-subtle);
         border-radius: 0;
+    }
+
+    .menu a:hover {
+        background: rgba(0, 0, 0, 0.02);
     }
 
     .menu a.link {
@@ -120,11 +161,15 @@
     .menu a.linkHover {
         width: 100%;
         border: none;
-        border-bottom: 1px solid #e8e8e8;
-        border-left: 4px solid green;
+        border-bottom: 1px solid var(--border-subtle);
+        border-left: 4px solid var(--accent);
         border-radius: 0;
-        background-color: #f4fff4;
-        font-weight: 700;
+        background: rgba(16, 185, 129, 0.04);
+        font-weight: 600;
+    }
+
+    .menu a.linkHover::after {
+        display: none;
     }
 
     .logo {

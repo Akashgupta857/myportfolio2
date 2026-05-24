@@ -1,97 +1,151 @@
-
-.headProject{
-    width: 80%;
-    margin: auto;
+/* ── Projects Section (Light Theme) ───────────────────────────────── */
+.headProject {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0 4rem;
+    padding: 4rem 0;
+    gap: 3rem;
 }
 
-.headChild{
-    width: 90%;
+/* Each project card */
+.headChild {
+    width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 3rem;
-}
-.projectImage{
-    max-width: 50%;
-}
-.ProjectLogoImage{
-    width: 90%;
-    margin: auto;
+    background: var(--bg-card);
+    border: 1px solid rgba(0,0,0,0.03);
     border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.projectContent{
-    width: 50%;
-    /* border: 1px solid black; */
-    padding: 20px;
+
+.headChild:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
-.projectTitle{
-    color: green;
-    font-weight: 700;
-    font-size: 1.75rem;
+
+/* Alternate layout — every other card reverses */
+.headChild:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.projectImage {
+    max-width: 48%;
+    flex-shrink: 0;
+}
+
+.ProjectLogoImage {
+    width: 100%;
+    margin: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s ease;
+}
+
+.headChild:hover .ProjectLogoImage {
+    transform: scale(1.03);
+}
+
+.projectContent {
+    width: 52%;
+    padding: 0 2rem;
+}
+
+.projectTitle {
+    font-weight: 800;
+    font-size: 1.8rem;
     line-height: 1.2;
-    margin-top: 0%;
-    margin-bottom: 0%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
 }
-.projectDetail{
-    font-size: 1rem;
+
+.projectDetail {
+    font-size: 1.05rem;
     font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    font-family: "Montserrat",sans-serif!important;
-        -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.projectButton{
-    margin: 10px;
-    background-color: transparent;
-    margin-top: 20px;
+.projectButton {
+    margin: 15px 15px 15px 0;
+    background: transparent;
     cursor: pointer;
-    padding: .25rem .5rem;
-    font-size: .875rem;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     line-height: 1.5;
-    border-radius: .2rem;
-    color: rgb(55, 172, 55);
-    border-color: rgb(38, 185, 38);
-}
-.technologiesDiv{
-    display: flex;
-    flex-wrap: wrap;
-}
-.Technologies{
-    color: #746f6f;
-    font-size: 16px;
-    margin: 5px;
-    padding: .25rem .4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    border-radius: .25rem;
+    border-radius: 8px;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-@media (max-width:800px) {
-    .headChild{
-        flex-direction: column;
-    }   
-    .projectImage{
-        max-width: 90%;
+.projectButton:hover {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+.technologiesDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.Technologies {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    padding: 6px 12px;
+    line-height: 1;
+    text-align: center;
+    border-radius: 8px;
+    background: #f1f5f9; /* Light grey slate */
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.Technologies:hover {
+    background: #e2e8f0;
+    color: var(--text-primary);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 800px) {
+    .headProject {
+        width: 92%;
     }
-    .ProjectLogoImage{
+
+    .headChild {
+        flex-direction: column !important;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .projectImage {
+        max-width: 100%;
+    }
+
+    .projectContent {
         width: 100%;
-        margin: auto;
-        border-radius: 20px;
+        padding: 0;
     }
-    .projectContent{
-    width: 90%;
-    /* border: 1px solid black; */
-    padding: 20px;
-    }
-    .clearClass{
+
+    .clearClass {
         clear: both;
     }
 }

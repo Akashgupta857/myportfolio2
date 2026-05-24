@@ -1,22 +1,107 @@
+/* ── Design Tokens (Modern Light Theme) ────────────────────────────── */
+:root {
+  --bg-primary: #fdfbfb;
+  --bg-secondary: #ebedee;
+  --bg-card: #ffffff;
+  
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-accent: rgba(16, 185, 129, 0.4);
+
+  --accent: #10b981;
+  --accent-light: #059669; /* Darker green for light theme gradients */
+  --accent-glow: rgba(16, 185, 129, 0.25);
+
+  --text-primary: #1e293b; /* Deep slate, almost black but softer */
+  --text-muted: #475569;
+  --text-dim: #64748b;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* ── Global Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  /* A very soft, airy mesh-like gradient */
+  background: radial-gradient(at 0% 0%, #ffffff 0px, transparent 50%),
+              radial-gradient(at 100% 100%, #ebedee 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
+/* ── Sections ─────────────────────────────────────────────────────── */
 .portfolioSection {
   scroll-margin-top: 72px;
   min-height: 100vh;
+  animation: fadeInUp 0.6s ease-out both;
 }
 
+.portfolioSection:nth-child(1) { animation-delay: 0s; }
+.portfolioSection:nth-child(2) { animation-delay: 0.05s; }
+.portfolioSection:nth-child(3) { animation-delay: 0.1s; }
+.portfolioSection:nth-child(4) { animation-delay: 0.15s; }
+.portfolioSection:nth-child(5) { animation-delay: 0.2s; }
+
+/* ── Keyframes ────────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 12px var(--accent-glow); }
+  50%      { box-shadow: 0 0 24px var(--accent-glow); }
+}
+
+/* ── Code ─────────────────────────────────────────────────────────── */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* ── Selection ────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ── Scrollbar (webkit) ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }

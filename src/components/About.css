@@ -1,54 +1,82 @@
+/* ── About Section (Light Theme) ──────────────────────────────────── */
 .aboutSection {
-  width: 80%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem 4rem;
+    width: 85%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
 }
 
 .aboutTitle {
-  color: green;
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+    font-weight: 800;
+    font-size: 2.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
 }
 
 .aboutIntro {
-  color: #212529;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
 }
 
 .aboutBlock {
-  margin-bottom: 2rem;
-  text-align: left;
+    margin-bottom: 2rem;
+    text-align: left;
+    background: var(--bg-card);
+    border: 1px solid rgba(0,0,0,0.03);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutBlock:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
 .aboutSubtitle {
-  color: green;
-  font-weight: 700;
-  font-size: 1.35rem;
-  margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 .aboutText,
 .aboutList {
-  color: #212529;
-  font-size: 1rem;
-  line-height: 1.6;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.aboutText {
+    margin: 0;
 }
 
 .aboutList {
-  padding-left: 1.25rem;
-  margin: 0;
+    padding-left: 1.25rem;
+    margin: 0;
 }
 
 .aboutList li {
-  margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
 }
 
+.aboutList li::marker {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .aboutSection {
-    width: 92%;
-  }
+    .aboutSection {
+        width: 92%;
+    }
+
+    .aboutBlock {
+        padding: 1.25rem;
+    }
 }

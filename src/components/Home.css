@@ -1,107 +1,184 @@
-
-
-.homeDetail{
-    width: 80%;
-    height: 70vh;
-    margin: auto;
+/* ── Home Section (Light Theme) ─────────────────────────────────────── */
+.homeDetail {
+    width: 85%;
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4rem;
-    padding: 2rem 1rem 4rem;
+    padding: 4rem 1rem;
+    gap: 2rem;
 }
 
-.detail{
-    width: 50%;
+.detail {
+    width: 55%;
     padding: 10px;
 }
 
-.hello{
-    color: green;
+/* "Hello !" */
+.hello {
+    color: var(--accent);
     font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: .5rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.name{
-    color: green;
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: .5rem;
-    line-height: 1.2;
-}
-.iam{
-    color: green;
-    font-size: 1.75rem;
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-.fullStact{
-   font-size: 1.75rem;
-    margin-bottom: .5rem;
-    font-weight: 700;
-    line-height: 1.2; 
-}
-.description{
-    color: green;
-    font-size: 1.25rem;
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
+/* Name — animated gradient shimmer for light theme */
+.name {
+    font-weight: 800;
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-light) 50%, var(--text-primary) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShimmer 6s ease infinite;
 }
 
-.icons{
+/* "I'm a full stack developer" */
+.iam {
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.fullStact {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--accent);
+}
+
+/* Bio paragraph */
+.description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+/* Social icons — normal color or dark slate */
+.icons {
     margin-top: 1.5rem;
     display: flex;
+    gap: 8px;
 }
 
-.icon{
-    width: 30px;
-    margin: 10px;
+.icon {
+    width: 34px;
+    margin: 8px;
+    /* Remove the invert filter so they are normal, or use a slate filter */
+    filter: brightness(0) saturate(100%) invert(31%) sepia(13%) saturate(1036%) hue-rotate(181deg) brightness(97%) contrast(85%); /* Matches --text-muted (#475569) */
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.resume{
-    background-color: green;
+.icon:hover {
+    transform: scale(1.15);
+    filter: brightness(0) saturate(100%) invert(56%) sepia(87%) saturate(2333%) hue-rotate(120deg) brightness(92%) contrast(98%); /* Matches --accent (#10b981) */
+}
+
+/* Resume button */
+.resume {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
     border: 0;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
-    font-size: 18px;
-}
-.image{
-    width: 50%;
+    padding: 12px 32px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    margin-top: 10px;
 }
 
-.profile{
-    width: 60%;
-    margin-left: 30%;
-    overflow: hidden;
-    padding: .25rem;
+.resume:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
 }
-.box{
+
+.resume:active {
+    transform: translateY(0);
+}
+
+/* Profile image */
+.image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    /* Clean white border with soft elegant shadow instead of glow */
+    border: 6px solid #ffffff;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.4s ease;
+}
+
+.profile:hover {
+    transform: scale(1.02);
+}
+
+.box {
     margin-left: 30px;
 }
 
-@media (max-width:980px) {
-    .image{
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 980px) {
+    .image {
         width: 40%;
-        z-index: -1;
     }
-    .detail{
+    .detail {
         width: 60%;
+    }
+    .profile {
+        width: 260px;
+        height: 260px;
+    }
+    .name {
+        font-size: 2.6rem;
     }
 }
 
-@media (max-width:770px) {
-    .image{
-        display: none;
+@media (max-width: 770px) {
+    .homeDetail {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 3rem 1rem;
     }
-    .detail{
+    .image {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .detail {
         width: 95%;
+    }
+    .profile {
+        width: 240px;
+        height: 240px;
+    }
+    .box {
+        margin-left: 0;
+    }
+    .icons {
+        justify-content: center;
     }
 }

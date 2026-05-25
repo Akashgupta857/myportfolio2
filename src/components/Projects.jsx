@@ -73,7 +73,7 @@ function Projects() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://thinkspacewhiteboard.netlify.app/signup"
+            href="https://rms.regenesys.net/student/auth/login/"
           >
             <button className="projectButton">See This Live</button>
           </a>

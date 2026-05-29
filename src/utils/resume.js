@@ -7,17 +7,18 @@ function getDriveDownloadUrl(viewUrl) {
 }
 
 export function openAndDownloadResume() {
-  const downloadUrl = getDriveDownloadUrl(resume);
-
+  // 1. Open resume in new tab — normal, never blocked
   window.open(resume, "_blank", "noopener,noreferrer");
 
-  const link = document.createElement("a");
-  link.href = downloadUrl;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.download = resumeFileName;
-  link.style.display = "none";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  // 2. Download via hidden iframe — browsers never block iframes as popups
+  const downloadUrl = getDriveDownloadUrl(resume);
+  const iframe = document.createElement("iframe");
+  iframe.style.display = "none";
+  iframe.src = downloadUrl;
+  document.body.appendChild(iframe);
+
+  // Clean up after download has had time to start
+  setTimeout(() => {
+    document.body.removeChild(iframe);
+  }, 5000);
 }
